@@ -1,3 +1,3 @@
 Gaz-Guzzler---Car-Game
 
-First app that i  ever made with JavaScript
+the First application that i  ever made with JavaScript
