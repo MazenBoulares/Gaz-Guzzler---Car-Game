@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
+		<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<style>
+			body{
+				
+				background: rgb(0,0,0);
+background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(51,2,55,1) 35%, rgba(129,0,65,1) 100%);
+  background-size: 100% 100%;
+				text-align:center;
+			}
+	
+			table td{
+				border:none;
+				padding:0;
+				
+			
+			}
+			table {
+				table-layout:fixed;
+				height:auto;
+			width: 50%;
+			border: none;
+			box-shadow:
+    0 0 20px 10px #fff,  
+    0 0 60px 20px #f0f, 
+    0 0 80px 35px #0ff; 
+			
+			} 
+
+#obs{
+
+	width: 40px;
+  height: 40px;
+  
+  background-color: #fff;
+  box-shadow:
+    0 0 13px 4px #fff,  
+    0 0 45px 4px #f0f, 
+    0 0 65px 4px #0ff; 
+
+}
+
+			
+				#img {
+		-webkit-animation: rotation 8s infinite linear;
+}
+@-webkit-keyframes rotation {
+		from {
+				-webkit-transform: rotate(0deg);
+		}
+		to {
+				-webkit-transform: rotate(359deg);
+		}
+}
+
+
+.glow {
+  font-size: 80px;
+  color: #fff;
+  text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
+
+
+
+
+			
+		</style>
+		<title>Course Voiture</title>
+		<meta charset="UTF-8" />
+<script src="action.js"> </script>
+	</head>
+	<img src="image/coollogo_com-14417183.png" style="width:30%; margin-bottom: 5em;" alt="">
+	<body  onkeydown="gameEngine(event);changeCar(event)" onkeyup="p(event)">
+		<table class="" style="display:none;" align="center">
+			<tr><td style="font-family: Charcoal; color: blue;">Type</td><td><img id= "img1" src="clio1.jpg" style="height: 100px;width: 100px;" /></td><td>Pseudo</td><td><input type="text" id="ps"  /></td></tr>
+			<tr><td style="font-family: Charcoal; color: blue;">Vitesse</td><td><img id = "cpt" src="compteur2.jpg" style="height: 100px; width: 100px;" onmouseover="changespeed()" /></td><td>couleur piste<input type="color"  id ="c" value="white" onchange="changecolor();" /></td></tr>
+			
+		</table>
+	
+		<table id='piste' width="500" height="500" border="1" align="center" >
+			<tr>
+				
+				<td width="100" height="100"id="obs" style="width:6Em;" ></td>
+				<td width="100" height="100" id=""></td>
+				<td width="100" height="100"id=""></td></td>
+				<td width="100" height="100"id=""></td>
+				<td width="100" height="100"id=""></td>
+				<td width="100" height="100"id=""></td>
+				<td width="100" height="100"id=""></td>
+				<td width="100" height="100"id=""></td>
+				<td width="100" height="100"id=""></td>
+				<td width="100" height="100"id=""></td>
+			</tr>
+			<tr>
+				<td width="100" height="100"id=""></td>
+				<td width="100" height="100"id=""></td>
+				<td width="100" height="100"id="obs"></td>
+				<td width="100" height="100"id="obs"></td>
+				<td width="100" height="100"id=""></td>
+				<td width="100" height="100"id=""></td>
+				<td width="100" height="100"id="obs"></td>
+				<td width="100" height="100"id="obs"></td>
+				<td width="100" height="100"id="obs"></td>
+				<td width="100" height="100"id=""></td>
+			</tr>
+			<tr>
+				<td width="100" height="100"id=""></td>
+				<td width="100" height="100"id=""></td>
+				<td width="100" height="100"id=""></td>
+				<td width="100" height="100"id=""></td>
+				<td width="100" height="100"id=""></td>
+				<td width="100" height="100"id=""></td>
+				<td width="100" height="100"id=""></td>
+				<td width="100" height="100"id=""></td>
+				<td width="100" height="100"id=""></td>
+				<td width="100" height="100"id=""></td>
+			</tr>
+			<tr>
+				<td width="100" height="100"id=""></td>
+				<td width="100" height="100"id="obs"></td>
+				<td width="100" height="100"id=""></td>
+				<td width="100" height="100"id=""></td>
+				<td width="100" height="100" id="obs"></td>
+				<td width="100" height="100" id="obs"></td>
+				<td width="100" height="100"id=""></td>
+				<td width="100" height="100"id="obs"></td>
+				<td width="100" height="100"id=""></td>
+				<td width="100" height="100"id=""></td>
+			</tr>
+			<tr>
+				<td width="100" height="100"id="" ></td>
+				<td width="100" height="100"id="obs" ></td>
+				<td width="100" height="100"id="obs" ></td>
+				
+				<td width="100" height="100" id="" title="Car Here"><img class="imgu" id="img2" src="image/45-459119_retro-neon-car-png-transparent-png-removebg-preview.png" height="70" width="100" /></td>
+				<td width="100" height="100"id=""></td>
+				<td width="100" height="100"id=""></td>
+				<td width="100" height="100"id=""></td>
+				<td width="100" height="100" id="obs"></td>
+				<td width="100" height="100" id=""></td>
+				<td width="100" height="100" id="obs"></td>
+			</tr>
+			<tr>
+				<td width="100" height="100"id=""></td>
+				<td width="100" height="100"id=""></td>
+				<td width="100" height="100"id="" ></td>
+				<td width="100" height="100"id=""></td>
+				<td width="100" height="100"id=""></td>
+				<td width="100" height="100"id="obs"></td>
+				<td width="100" height="100"id=""></td>
+				<td width="100" height="100"id=""></td>
+				<td width="100" height="100"id=""></td>
+				<td width="100" height="100"id=""></td>
+			</tr>
+			<tr>
+				<td width="100" height="100"id=""></td>
+				<td width="100" height="100"id=""></td>
+				<td width="100" height="100"id="" ></td>
+				<td width="100" height="100"id="obs"></td>
+				<td width="100" height="100"id="obs"></td>
+				<td width="100" height="100"id="obs"></td>
+				<td width="100" height="100"id=""></td>
+				<td width="100" height="100"id=""></td>
+				<td width="100" height="100"id=""></td>
+				<td width="100" height="100"id=""></td>
+			</tr>
+			<tr>
+				<td width="100" height="100" id="obs"></td>
+				<td width="100" height="100" id="obs"></td>
+				<td width="100" height="100" id=""></td>
+				<td width="100" height="100"id=""></td>
+				<td width="100" height="100"id=""></td>
+				<td width="100" height="100"id=""></td>
+				<td width="100" height="100"id=""></td>
+				<td width="100" height="100"id=""></td>
+				<td width="100" height="100"id=""></td>
+				<td width="100" height="100" id=""></td>
+			</tr>
+			<tr>
+				<td width="100" height="100"id=""></td>
+				<td width="100" height="100"id=""><img src="image/gas-bottle 2 (2).png" class="imgu" style="width:50%;" id="img"></td>
+				<td width="100" height="100" id=""></td>
+				<td width="100" height="100"id=""></td>
+				<td width="100" height="100"id=""></td>
+				<td width="100" height="100" id="obs"></td>
+				<td width="100" height="100" id="obs"></td>
+				<td width="100" height="100" id="obs"></td>
+				<td width="100" height="100" id="obs"></td>
+				<td width="100" height="100" id=""></td>
+			</tr>
+			<tr>
+				<td width="100" height="100"id=""></td>
+				<td width="100" height="100"id="obs"></td>
+				<td width="100" height="100" id="obs"></td>
+				<td width="100" height="100"id=""></td>
+				<td width="100" height="100"id=""></td>
+				<td width="100" height="100" id=""></td>
+				<td width="100" height="100" id=""></td>
+				<td width="100" height="100"id="" ></td>
+				<td width="100" height="100"id=""></td>
+				<td width="100" height="100"id=""></td>
+			</tr>
+		</table>
+		<div style="display:block; margin-top: 4em;">
+<p class="glow" style="display:inline-block; margin:0.4em;">SCORE :</p>
+<p id="score" class="glow" style="display:inline-block; margin:0.4em;">0</p>
+</div>
+
+<audio src="audio/audiomass-output.mp3" id="my_audio" loop="loop"></audio>
+<script >
+	
+    window.onload=function(){
+      document.getElementById("my_audio").play();
+    }
+
+
+	
+	var img = document.getElementById("img");
+        var tds = document.getElementsByTagName("td");
+        
+    /*    setInterval(function(){
+            var randomNumber = Math.floor(Math.random() * (tds.length-1));
+            tds[randomNumber].appendChild(img);
+			}, 3000); */
+			var rnd;
+			
+    setInterval(function(){
+		do{
+            rnd = Math.floor(Math.random() * (tds.length-1));}
+			while(tds[rnd].id=="obs");
+            }, 4400);
+		
+
+        setInterval(function(){
+
+            tds[rnd].appendChild(img);
+            tds[rnd].title="reward";
+		
+			
+		}
+		, 4400);
+    tds[rnd].title="";
+			
+	
+
+      
+		
+
+	
+
+		</script>
+		
+
+<audio id="audiotag1" src="audio/Coin - sound effect.mp3" preload="auto"></audio>
+
+<audio id="audiotag2" src="audio/Crash - Sound Effect for editing.mp3" preload="auto"></audio>
+		
+	</body>
+</html>
